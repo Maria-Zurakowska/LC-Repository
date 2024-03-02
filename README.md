@@ -1,4 +1,4 @@
-# **LC-tasks**
+# **Coding Challenges Repository**
 
 Welcome to my repository, a place where I explore algorithmic challenges and data structure problems. This is where I document my journey through various coding exercises, focusing on improving my skills and understanding in software development.
 
