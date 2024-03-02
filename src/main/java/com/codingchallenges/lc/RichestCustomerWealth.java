@@ -1,4 +1,4 @@
-package com.lcrepository;
+package com.codingchallenges.lc;
 
 public class RichestCustomerWealth {
 

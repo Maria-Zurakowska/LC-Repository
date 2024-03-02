@@ -1,10 +1,10 @@
-package com.lcrepository;
+package com.codingchallenges;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LcRepositoryApplicationTests {
+class CodingChallengesApplicationTests {
 
     @Test
     void contextLoads() {

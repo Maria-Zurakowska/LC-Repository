@@ -1,13 +1,13 @@
-package com.lcrepository;
+package com.codingchallenges;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LcRepositoryApplication {
+public class CodingChallengesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LcRepositoryApplication.class, args);
+        SpringApplication.run(CodingChallengesApplication.class, args);
     }
 
 }
