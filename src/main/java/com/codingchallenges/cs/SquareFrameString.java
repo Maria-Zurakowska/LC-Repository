@@ -27,11 +27,19 @@ public class SquareFrameString {
 
         int n = 4;
 
-        log.info(Arrays.deepToString(getSquareFrameString(n)));
+        String[] array1D = getSquareFrameString1D(n);
+        String[][] array2D = getSquareFrameString2D(n);
 
+            for(String row : array1D){
+                System.out.println(row);
+            }
+
+            Arrays.stream(array2D)
+                    .map(row -> String.join(" ", row))
+                    .forEach(System.out :: println);
     }
 
-    public static String[][] getSquareFrameString(int n) {
+    public static String[][] getSquareFrameString2D(int n) {
 
         String[][] array = new String[n][n];
 
@@ -39,22 +47,42 @@ public class SquareFrameString {
 
             for(int j = 0; j < n; j++){
 
-                if(i == 0 || i == n-1){ // wiersze
+                if(i == 0 || i == n-1){
                     array[i][j] = "*";
+
                 } else if(j == 0 || j == n-1 ){
                     array[i][j] = "*";
 
                 } else {
                     array[i][j] = " ";
                 }
-
-
             }
-
         }
-
-
         return array;
     }
 
+    public static String[] getSquareFrameString1D(int n){
+
+        String[] array = new String[n];
+
+        for (int i = 0; i < n; i++){
+
+            String row = "";
+
+            for(int j = 0; j < n; j++){
+
+                if(i == 0 || i == n-1){
+                    row = row + "*";
+
+                } else if(j == 0 || j == n-1 ){
+                    row = row + "*";
+
+                } else {
+                    row = row + " ";
+                }
+            }
+            array[i] = row;
+        }
+        return array;
+    }
 }
