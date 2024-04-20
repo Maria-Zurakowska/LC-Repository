@@ -1,5 +1,7 @@
 package com.codingchallenges.rec;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public class Pair {
 
     private String userName;
