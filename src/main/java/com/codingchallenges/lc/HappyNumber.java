@@ -12,18 +12,18 @@ public class HappyNumber {
         System.out.println(isHappy(n));
     }
 
-    public static List<Integer> numberToListOfDigits(int n, List<Integer> numberDigits){
+    public static List<Integer> numberToListOfDigits(int n, List<Integer> numberDigits) {
 
-        if(n != 0) {
+        if (n != 0) {
             int temp = n % 10;
-            n = n /10;
+            n = n / 10;
             numberToListOfDigits(n, numberDigits);
             numberDigits.add(temp);
         }
         return numberDigits;
     }
 
-    public static int digitSquareSum(List<Integer> digitsList){
+    public static int digitSquareSum(List<Integer> digitsList) {
 
         int sum = 0;
 
@@ -33,24 +33,22 @@ public class HappyNumber {
         return sum;
     }
 
-    public static boolean isHappy(int n){
+    public static boolean isHappy(int n) {
 
-            int temp = n;
+        int temp = n;
 
-            if(temp < 10) { // Dlaczego < 10, chodzi o to, ze gdy liczba jest pojedyncza, konczymy rekursje gdy liczba == 1 i dla == 7 wynik koncowy w rekursji tez jest happy
-                if (temp == 1 || temp == 7) { return true; //dla reszty liczb tak nie jest, bez tego mialam problem infinite loop a potem stack overflow.
-                } else return false;
-            }
+        if (temp < 10) { // Base case for recursion: if temp is a digit AND
+            if (temp == 1 || temp == 7) {  return true;  // if that digit is 1 or 7 ==> the number is 'happy'
+            } else return false;
+        }
 
-        List<Integer> list = new ArrayList<>(); // pusta lista
+        List<Integer> list = new ArrayList<>();
+        List<Integer> digitsList = numberToListOfDigits(temp, list);
 
-        List<Integer> digitsList = numberToListOfDigits(temp, list);// liczba zamieniona na liste cyfr z tej liczby {1,2,3,4,5,6}, List<Integer> list
-
-        int squareSum = digitSquareSum(digitsList);// suma kwadratow cyfr z liczby ||| {1,2,3,4,5,6} --> 1kw,2kw,3kw,4kw,5kw,6kw = 91
-
+        int squareSum = digitSquareSum(digitsList);
         temp = squareSum;
-        digitsList.clear(); // czyszcze liste {1,2,3,4,5,6} --> teraz PUSTA
-//.test
+        digitsList.clear();
+
         return isHappy(temp);
     }
 }
